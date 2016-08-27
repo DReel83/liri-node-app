@@ -1,15 +1,26 @@
 var spotify = require('spotify');
 
-var query = process.argv[2];
-}
+var search = process.argv[2];
+
  
-spotify.search({ type: 'track', query }, function(err, data) {
+
+spotify.search({ type: 'track', query: search }, function(err, data) {
     if ( err ) {
         console.log('Error occurred: ' + err);
         return;
     }
-   var songInfo = data.tracks.items[0].name;
+    else{
+    	var songData =  data.tracks.items[0];
+    	//console.log(songData);
 
-   console.log(songInfo);
+    	var artist = songData.artists[0].name;
+    	var name = songData.name;
+    	var album = songData.album.name;
+    	var preview = songData.preview_url;
+
+
+    	console.log("Name: " + name + "\nArtist/s: " + artist + "\nAlbum: " + album + "\nPreview URL: " + preview);
+    }	  
+
 
 });
