@@ -24,7 +24,7 @@ request(url, function(err, response, data){
 		//console.log(--------------------);
 		console.log(title + '\n' + year  + '\n' + imdbRating + '\n' + country  + '\n' + language + '\n' + plot + '\n' + actors);
 		console.log('-----------------------------------------');
-;	}
+	}
 });
 
 // similar api requests for twitter and spotify will have twitter or spotify variables. 
